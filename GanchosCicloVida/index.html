@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Primera app con Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vm">
+        <h3>{{ mensaje }}</h3>
+        <button v-on:click="mensaje = 'ESTE ES EL NUEVO MENSAJE'">Cambiar mensaje</button>
+        <button v-on:click="destruir">Destruir instancia</button>
+    </div>
+    <script src="vue.js"></script>
+</body>
+</html>
