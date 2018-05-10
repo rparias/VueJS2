@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Directivas</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vm">
+        <img :src="imagen">
+        <div v-text="texto"></div>
+        <div v-html="cadenaHtml"></div>
+
+        <!--etiqueta v-if-else-->
+        <!--la etiqueta template no se muestra en el inspector de codigo-->
+        <template v-if='mostrar'>
+            <h3>Titulo</h3>
+            <p>parrafo</p>
+            Este es el primer div
+        </template>
+        <div v-else>Este es el segundo div</div>
+
+        <!--etiqueta v-else-if-->
+        <div v-if='numeroParrafo == 1'>Primer parrafo</div>
+        <div v-else-if='numeroParrafo == 2'>Segundo parrafo</div>
+        <div v-else-if='numeroParrafo == 3'>Tercer parrafo</div>
+        <div v-else>Ni 1, ni 2, ni3</div>
+
+        <!--la directiva v-show esconde el div pero no lo elimina-->
+        <div v-show='mostrar'>Se ve el v-show </div>
+
+        <!--uso de la directiva v-for-->
+        <ul>
+            <li v-for="(pais, indice) in paises">
+                {{ indice + 1 }} - {{ pais.nombre }}
+            </li>
+        </ul>
+
+        <!--uso de la directiva v-for con template-->
+        <!--template permite tambien seleccionar areas enteras-->
+        <!--el area entera aqui es el nombre y la linea debajo-->
+        <ul>
+            <template v-for="amigo in amigos">
+                <li >
+                    {{ amigo }}
+                </li>
+                <hr />
+            </template>
+        </ul>
+
+        <!--uso de la directiva v-for con objetos-->
+        <ul>
+            <li v-for="(dato, llave) in empleado">
+                {{ llave }}: {{ dato }}
+            </li>
+        </ul>
+
+    </div>
+    <script src="vue.js"></script>
+</body>
+</html>
